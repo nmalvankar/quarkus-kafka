@@ -25,6 +25,7 @@ public class PriceConverter {
     // Acknowledge the messages before calling this method.
     @Acknowledgment(Acknowledgment.Strategy.PRE_PROCESSING)
     public double process(int priceInUsd) {
+        System.out.println("Converter********");
         return priceInUsd * CONVERSION_RATE;
     }
 

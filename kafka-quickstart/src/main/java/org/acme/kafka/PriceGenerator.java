@@ -19,6 +19,7 @@ public class PriceGenerator {
 
     @Outgoing("generated-price")
     public Multi<Integer> generate() {
+        System.out.println("Generating price every 5 secs");
         return Multi.createFrom().ticks().every(Duration.ofSeconds(5))
                 .onOverflow().drop()
                 .map(tick -> random.nextInt(100));
